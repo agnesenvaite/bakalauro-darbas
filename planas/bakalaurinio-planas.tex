@@ -1,0 +1,131 @@
+\documentclass{VUMIFPSbakalaurinis}
+\usepackage{algorithmicx}
+\usepackage{algorithm}
+\usepackage{algpseudocode}
+\usepackage{amsfonts}
+\usepackage{amsmath}
+\usepackage{bm}
+\usepackage{caption}
+\usepackage{color}
+\usepackage{float}
+\usepackage{graphicx}
+\usepackage{listings}
+\usepackage{subfig}
+\usepackage{wrapfig}
+
+%mano pridėti paketai
+\usepackage{enumitem}
+\usepackage[none]{hyphenat}
+
+
+%neperklti į kitą eilutę
+\hyphenation{PLSE}
+\hyphenation{ICO}
+\hyphenation{FORM}
+
+
+
+% Titulinio aprašas
+\university{Vilniaus universitetas}
+\faculty{Matematikos ir informatikos fakultetas}
+\department{Programų sistemų katedra}
+\papertype{Bakalauro darbo planas}
+\title{Pakartotinis kodo panaudojimas pirminio kriptovaliutų platinimo išmaniuosiuose kontraktuose}
+\titleineng{Code Reuse in Initial Coin Offering Smart Contracts}
+\author{Agnė Mačiukaitė}
+\supervisor{lekt. Gediminas Rimša}
+\date{Vilnius – \the\year}
+
+\bibliography{library} 
+
+
+\begin{document}
+\maketitle
+
+\tableofcontents
+\section{Bakalauro darbo planas}
+
+
+Pirminis kriptovaliutų platinimas (angl. initial coin offering, toliau ICO) yra reikšminga naujovė, naudojama verslui finansuoti. Tarp 2014 metų sausio ir 2018 birželio ICO surinko daugiau nei 18 milijardų dolerių. Lėšų surinkimas ICO būdu pritraukė verslininkų, investuotojų ir reguliavimo įstaigų dėmesio. Dauguma ICO kuria išmaniuosius kontraktus (automatizuotą programinę įrangą) ir juos talpina Etheruem blockchain \cite{Howell2018}.
+
+Problema: per trumpą laiką buvo sukurta daug panašių išmaniųjų kontraktų, kurie dažnai kuriami kopijuojant jau esamus ICO išmaniuosius kontraktus bei pridedant reikiamus pakeitimus. Taip sukurta didelė aibė ICO išmaniųjų kontraktų, kurių kodas yra labai panašus arba kartojasi. Pernaudojamumo problemą išspręsti bandoma Ethereum išmaniųjų kontraktų bibliotekomis, tačiau jos ne visada padengia visą ICO išmaniųjų kontraktų savybių aibę.
+
+
+\subsection{Tyrimo objektas}
+
+
+Tyrimo objektas - ICO išamniųjų kontraktų savybių modeliai: patalpintų Ethereum blockchain, bibliotekų OpenZeppelin ir TokenMarket. OpenZeppelin ir TokenMarket - atviro kodo Ethereum išmaniųjų kontraktų bibliotekos, populiariausios GitHub\footnote{\url{https://github.com/}} versijų valdymui skirtame tinklapyje.
+
+\subsection{Darbo tikslas}
+
+Darbo tikslas: sukurti savybių modelį, atvaizduojančiu Ethereum blockchain patalpintų ICO išmaniųjų kontraktų savybes, remiantis juo patikrinti ar Ethereum bibliotekos padengia visas savybes, bei pasiūlyti būdą ICO išmaniųjų kontraktų kodo pernaudojamumui didinti.
+
+
+\subsection{Darbo uždaviniai}
+
+Tikslui pasiekti išsikelti uždaviniai:
+\begin{enumerate}[topsep=0pt,itemsep=-1ex,partopsep=1ex,parsep=1ex]
+\item Parengti ICO išmaniųjų kontraktų savybių modelį iš išmaniųjų kontraktų, patalpintų Ethereum blockchain ir jį validuoti;
+\item Parengti ICO savybių modelius iš OpenZeppelin ir TokenMarket bibliotekų;
+\item Palyginti savybių modelį, sukurtą iš Ethereum blockchain esančių ICO išmaniųjų kontraktų, su OpenZeppelin ir TokenMarket savybių modeliais;
+\item Pasiūlyti pakeitimus vienai iš bibliotekų (tai, kuri yra labiau išvystyta), remiantis savybių modelių palyginimu.
+\end{enumerate}
+
+\subsection{Laukiami rezultatai}
+
+Atsižvelgus į darbo tikslą ir uždavinius, laukiami rezultatai:
+\begin{enumerate}[topsep=0pt,itemsep=-1ex,partopsep=1ex,parsep=1ex]
+\item Sukurtas ICO savybių modelis iš išmaniųjų kontraktų, patalpintų Ethereum blockchain;
+\item Sukurti ICO savybių modeliai iš OpenZeppelin ir TokenMarket  bibliotekų;
+\item Nustatytos savybės, kurių OpenZeppelin ir TokenMarket nepalaiko;
+\item Savybių, kurių neįgyvendina OpenZeppelin ar TokenMarket, įgyvendinimas vienai iš bibliotekų.
+
+\end{enumerate}
+
+
+\subsection{Tyrimo metodas}
+
+Produktų linijos programinės įrangos inžinerija (angl. product line software engineering, toliau - PLSE) naudojama įmonėse pakartojamumui susijusiuose programinės įrangos produktuose numatyti. PLSE suteikia bendrą architektūrą ir pernaudojamą kodą programinės įrangos kūrėjams \cite{Svahnberg}. Toks kūrimas susideda iš savybių išskyrimo ir jų įgyvendinimo produkte. Gerai išskirtos produkto ypatybės padeda sukurti lengvai pernaudojamą programą \cite{Lee2015}.
+
+Savybių modeliavimas yra pagrindinis metodas atrinkti bei valdyti bendrąsias ir kintamąsias savybes PLSE \cite{Czarnecki2004}. Savybių modeliavimas yra populiariausias PLSE kūrime nuo pat pirmojo jo pristatymo \cite{Kang1990}.
+
+Savybių pernaudojimo metodas (angl. feature-oriented reuse method, toliau - FORM) praplėčia savybių modeliavimą bei nusako, kaip remiantis savybių modeliu sukurti programinės įrangos architektūrą ir komponentus. FORM teigia, kad savybės apibūdina galimus galutinio produkto variantus, o kodas, kuris įgyvendina savybes, turi būti sukurtas pakartotiniam panaudojimui \cite{Kang}.
+
+Atsižvelgiant į tai, išsikeltam tikslui pasiekti pasirinktas savybių modeliavimas.
+
+
+
+\subsection{Darbo atlikimo procesas}
+\begin{enumerate}[topsep=0pt,itemsep=-1ex,partopsep=1ex,parsep=1ex]
+\item Apžvelgti kodo pernaudojimo galimybes, naudojantis savybių modeliu;
+\item Surinkti 150-200 ICO išmaniuosius kontraktus, esančius Ethereum blockchain. Sumažinti surinktų išmaniųjų kontraktų aibę iki išmaniųjų kontraktų, kurie realizuoja tik ICO funkcionalumą (nerealizuoja žetono (angl. token) funkcionalumo);
+\item Sukurti ICO savybių modelį iš atrinktų išmaniųjų kontraktų, esančių Ethereum blockchain;
+\item Sukurti ICO savybių modelį iš OpenZeppelin bibliotekos;
+\item Sukurti ICO savybių modelį iš TokenMarket bibliotekos;
+\item Palyginti savybių modelį, sukurtą iš išmaniųjų kontraktų, esančių Ethereum blockchain 
+su savybių modeliais, sukurtais iš OpenZeppelin ir TokenMarket bibliotekų;
+\item Pasirinkti biblioteką, kuriai reikia daugiau pakeitimų. Jai pasiūlyti pakeitimus, remiantis savybių modelių palyginimu.
+\end{enumerate}
+
+\subsection{Aktualūs literatūros šaltiniai}
+
+
+\begin{enumerate}[topsep=0pt,itemsep=-1ex,partopsep=1ex,parsep=1ex]
+\item Kyo C. Kang, Sholom G. Cohen, James A. Hess, William E. Novak ir A. Spencer
+Peterson. Feature-Oriented Domain Analysis (FODA) Feasibility Study. 1990
+\item Kwanwoo Lee, Kyo C. Kang ir Jaejoon Lee. Concepts and Guidelines of Feature
+Modeling for Product Line Software Engineering. 2015
+\item Kyo C. Kang, Sajoong Kim, Jaejoon Lee, Kijoo Kim, Gerard Jounghyun Kim, Euiseob Shin. FORM: A Feature-Oriented Reuse Method with Domain-Specific Reference Architectures. 1998
+\end{enumerate}
+
+\printbibliography[heading=bibintoc] 
+
+\sectionnonum{Santrumpos}
+
+ICO - pirminis kriptovaliutų platinimas (angl. initial coin offering).
+
+PLSE - produktų linijos programinės įrangos inžinerija (angl. product line software engineering)
+
+FORM - savybių pernaudojimo metodas (angl. feature-oriented reuse method)
+
+\end{document}

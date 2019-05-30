@@ -1,0 +1,10 @@
+{
+  "name": "crawler-etherscan",
+  "version": "0.0.1",
+  "dependencies": {
+    "crawler": "^1.1.2",
+    "fs": "^0.0.1-security",
+    "streamer": "^0.2.1",
+    "readline": "^1.3.0"
+  }
+}

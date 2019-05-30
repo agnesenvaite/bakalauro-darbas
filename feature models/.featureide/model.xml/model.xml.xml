@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<layout chosenLayoutAlgorithm="0" hideLegend="true" horizontalLayout="true">
+    <struct>
+        <feature X="990" Y="227" name="Pirkimas"/>
+        <feature X="1227" Y="472" name="Inevstavimo_kriterijus"/>
+        <feature X="404" Y="594" name="S8_Data_keičiama"/>
+        <feature X="854" Y="427" name="S14_pildomas"/>
+        <feature X="1071" Y="444" name="S19_Nekeičiama"/>
+        <feature X="695" Y="263" name="S2_Žetonų_susigrąžinimas"/>
+        <feature X="1203" Y="547" name="S22_Maksimalus"/>
+        <feature X="603" Y="366" name="S3_Laikinai_sustabdomas"/>
+        <feature X="739" Y="228" name="S35_Žetonų_priskyrimas_investuotojams"/>
+        <feature X="1169" Y="491" name="Keičiama"/>
+        <feature X="471" Y="556" name="Kintama"/>
+        <feature X="381" Y="433" name="ETH_saugojimas"/>
+        <feature X="501" Y="328" name="Platinimo_periodas"/>
+        <feature X="865" Y="377" name="Investuotojų_sąrašas"/>
+        <feature X="579" Y="510" name="S5_Nuo_sukūrimo"/>
+        <feature X="301" Y="554" name="S39_ICO_kontrakte"/>
+        <feature X="389" Y="519" name="S27_Persiunčiamas"/>
+        <feature X="1306" Y="579" name="S21_Minimalus"/>
+        <feature X="710" Y="311" name="S25_mokėjimas_ETH"/>
+        <feature X="905" Y="499" name="S38_Nekintantis"/>
+        <feature X="1052" Y="535" name="S18_Kinta_etapais"/>
+        <feature X="636" Y="206" name="Susigrąžinimas"/>
+        <feature X="1152" Y="580" name="S20_Pakeičiama"/>
+        <feature X="944" Y="417" name="S28_Iškart"/>
+        <feature X="663" Y="152" name="S10_ICO_Būsena"/>
+        <feature X="1136" Y="396" name="Kaina"/>
+        <feature X="979" Y="343" name="Žetonų_atsiėmimas"/>
+        <feature X="533" Y="169" name="Platinimas"/>
+        <feature X="533" Y="542" name="S36_Nekintama"/>
+        <feature X="784" Y="456" name="S37_NeIdentifikuotas"/>
+        <feature X="731" Y="189" name="S1_Savininkas"/>
+        <feature X="541" Y="592" name="S9_Sustabdoma"/>
+        <feature X="575" Y="286" name="S33_ETH_Susigrąžinimas"/>
+        <feature X="764" Y="346" name="S13_Investuotojas"/>
+        <feature X="750" Y="76" name="ICO"/>
+        <feature X="662" Y="429" name="S12_Identifikuotas"/>
+        <feature X="623" Y="460" name="Pradžia"/>
+        <feature X="516" Y="450" name="Pabaiga"/>
+        <feature X="1016" Y="490" name="S32_Nepersiunčiami"/>
+        <feature X="710" Y="566" name="S7_Iškvietus_funkciją"/>
+        <feature X="751" Y="516" name="S6_Fiksuotu_laiku"/>
+        <feature X="952" Y="563" name="S29_Pasibaigus_ICO"/>
+    </struct>
+    <constraints/>
+</layout>

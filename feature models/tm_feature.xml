@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<featureModel>
+    <properties/>
+    <struct>
+        <and abstract="true" mandatory="true" name="ICO">
+            <feature mandatory="true" name="S1_Savininkas"/>
+            <and mandatory="true" name="Pirkimas">
+                <alt mandatory="true" name="Kaina">
+                    <feature name="S18_Kinta_etapais"/>
+                    <feature name="S19_Nekeičiama"/>
+                </alt>
+                <or mandatory="true" name="S13_Investuotojas">
+                    <feature name="S12_Identifikuotas"/>
+                    <feature name="S37_NeIdentifikuotas"/>
+                </or>
+                <or name="Inevstavimo_kriterijus">
+                    <feature name="S21_Minimalus"/>
+                    <feature name="S22_Maksimalus"/>
+                </or>
+                <feature mandatory="true" name="S25_mokėjimas_ETH"/>
+                <alt mandatory="true" name="Žetonų_atsiėmimas">
+                    <feature name="S28_Iškart"/>
+                    <feature name="S29_Pasibaigus_ICO"/>
+                    <feature name="S32_Nepersiunčiami"/>
+                </alt>
+                <alt name="Investuotojų_sąrašas">
+                    <feature name="S14_pildomas"/>
+                    <feature name="S38_Nekintantis"/>
+                </alt>
+            </and>
+            <feature name="S35_Žetonų_priskyrimas_investuotojams"/>
+            <and mandatory="true" name="Platinimas">
+                <and mandatory="true" name="Platinimo_periodas">
+                    <alt mandatory="true" name="Pradžia">
+                        <feature name="S6_Fiksuotu_laiku"/>
+                        <feature name="S5_Nuo_sukūrimo"/>
+                    </alt>
+                    <alt mandatory="true" name="Pabaiga">
+                        <alt name="Kintama">
+                            <feature name="S8_Data_keičiama"/>
+                            <feature name="S9_Sustabdoma"/>
+                        </alt>
+                        <feature name="S36_Nekintama"/>
+                    </alt>
+                    <feature name="S3_Laikinai_sustabdomas"/>
+                </and>
+                <feature name="S33_ETH_Susigrąžinimas"/>
+                <alt mandatory="true" name="ETH_saugojimas">
+                    <feature name="S27_Persiunčiamas"/>
+                    <feature name="S39_ICO_kontrakte"/>
+                </alt>
+            </and>
+            <feature name="S10_ICO_Būsena"/>
+        </and>
+    </struct>
+    <constraints/>
+    <calculations Auto="true" Constraints="true" Features="true" Redundant="true" Tautology="true"/>
+    <comments/>
+    <featureOrder userDefined="false"/>
+</featureModel>
